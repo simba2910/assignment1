@@ -14,3 +14,8 @@ This project implements a simple API with two endpoints as required by the assig
    ```bash
    python -m venv venv
    venv\Scripts\activate
+
+accessing the json files you must specify student or subject
+1. localhost/5000/students for students
+2. localhost/5000/subjects for subjects
+ 
