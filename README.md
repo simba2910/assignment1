@@ -19,3 +19,7 @@ accessing the json files you must specify student or subject
 1. localhost/5000/students for students
 2. localhost/5000/subjects for subjects
  
+
+ links to deployed server:
+http://ec2-13-60-227-67.eu-north-1.compute.amazonaws.com/students
+http://ec2-13-60-227-67.eu-north-1.compute.amazonaws.com/subjects
