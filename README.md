@@ -23,3 +23,39 @@ accessing the json files you must specify student or subject
  links to deployed server:
 http://ec2-13-60-227-67.eu-north-1.compute.amazonaws.com/students
 http://ec2-13-60-227-67.eu-north-1.compute.amazonaws.com/subjects
+
+
+# Back up Schemes
+
+1. Full Backup
+Backs up all data, regardless of previous backups.
+
+Advantages
+- Complete copy of all data
+- Simplest restoration process
+
+Disadvantages
+- Requires most storage
+- Time consuming for large datasets
+
+2. Incremental Backup
+Backs up only the changes made since the last backup
+
+Advantages
+- Only backs up changed files since last backup
+- Faster and uses less storage
+
+Disadvantages
+- More complex restoration( needs full + all increments)
+- Dependecy chain between backups
+
+3. Differential Backup
+Backs up only the changes made since the last full backup
+
+Advantages
+- Only backs up changes since last full backup
+- Easier restoration than incremental ( full + latest differential)
+
+Disadvantages
+- Larger than incremental backups
+- Still requires full backup for complete restoration
