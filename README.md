@@ -59,3 +59,64 @@ Advantages
 Disadvantages
 - Larger than incremental backups
 - Still requires full backup for complete restoration
+
+
+
+# Bash Scripts
+
+1. health_check.sh
+- Monitors server resource usage and API health:
+
+- Checks CPU, memory, and disk space usage.
+
+- Verifies that the Nginx web server is running.
+
+- Sends test requests to /students and /subjects API endpoints using curl.
+
+- Logs results with timestamps to /var/log/server_health.log.
+
+- Outputs warnings if any service is down or disk usage exceeds 90%.
+
+- Every 6 hours
+
+2. backup_api.sh
+- Creates backups of the deployed API code:
+
+- Archives the API directory (/var/www/html) to /home/ubuntu/backups/api_backup_<date>.tar.gz.
+
+- Automatically deletes backups older than 7 days.
+
+- Logs results to /var/log/backup.log.
+
+- Daily at 2 AM
+
+3. update_server.sh
+- Updates the server and pulls the latest API code:
+
+- Runs apt update && apt upgrade -y to update Ubuntu packages.
+
+- Pulls new code from the GitHub repo.
+
+- Restarts Nginx to apply updates.
+
+- Logs all actions to /var/log/update.log.
+
+- Every 3 days at 3 AM
+
+Usage Instructions
+for Permissions
+- chmod +x bash_scripts/*.sh
+Running manually
+- sudo bash_scripts/health_check.sh
+- sudo bash_scripts/backup_api.sh
+- sudo bash_scripts/update_server.sh
+
+
+Dependencies
+
+- curl - for API endpoint testing
+- git : for pulling updates
+- cron : for scheduling automation
+- tar : for creating backups
+- nginx : web server
+- systemctl : for managing services
