@@ -1,0 +1,4 @@
+0 */6 * * * /usr/local/bin/health_check.sh
+0 2 * * * /usr/local/bin/backup_api.sh
+0 3 */3 * * /usr/local/bin/update_server.sh
+
