@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API_DIR="https://github.com/simba2910/assignment1.git"
+API_DIR="/var/www/html"
 BACKUP_DIR="/home/ubuntu/backups"
 BACKUP_LOG_FILE="/var/log/backup.log"
 TIMESTAMP=$(date '+%Y-%m-%d')
