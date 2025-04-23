@@ -16,8 +16,8 @@ This project implements a simple API with two endpoints as required by the assig
    venv\Scripts\activate
 
 accessing the json files you must specify student or subject
-1. localhost/5000/students for students
-2. localhost/5000/subjects for subjects
+1. http://127.0.0.1:5000/students for students
+2. http://127.0.0.1:5000/subjects for subjects
  
 
  links to deployed server:
