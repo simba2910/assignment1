@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API_DIR="/var/www/html"
+API_DIR="/home/ubuntu/flask-app/assignment1"
 BACKUP_DIR="/home/ubuntu/backups"
 BACKUP_LOG_FILE="/var/log/backup.log"
 TIMESTAMP=$(date '+%Y-%m-%d')

@@ -15,14 +15,15 @@ This project implements a simple API with two endpoints as required by the assig
    python -m venv venv
    venv\Scripts\activate
 
+Locally
 accessing the json files you must specify student or subject
 1. http://127.0.0.1:5000/students for students
 2. http://127.0.0.1:5000/subjects for subjects
  
 
  links to deployed server:
-http://ec2-13-60-227-67.eu-north-1.compute.amazonaws.com/students
-http://ec2-13-60-227-67.eu-north-1.compute.amazonaws.com/subjects
+http://13.51.241.80/students
+http://13.51.241.80/subjects
 
 
 # Back up Schemes
@@ -82,7 +83,7 @@ Disadvantages
 2. backup_api.sh
 - Creates backups of the deployed API code:
 
-- Archives the API directory (/var/www/html) to /home/ubuntu/backups/api_backup_<date>.tar.gz.
+- Archives the API directory (/home/ubuntu/flask-app/assignment1) to /home/ubuntu/backups/api_backup_<date>.tar.gz.
 
 - Automatically deletes backups older than 7 days.
 

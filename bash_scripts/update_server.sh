@@ -1,7 +1,7 @@
 #!/bin/bash
 
 UPDATE_LOG_FILE="/var/log/update.log"
-REPO_DIR="/var/www/html"
+REPO_DIR="/home/ubuntu/flask-app/assignment1"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
 echo "[$TIMESTAMP] Updating system and API..." >> $UPDATE_LOG_FILE
