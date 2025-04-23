@@ -1,7 +1,7 @@
 #!/bin/bash
 
 UPDATE_LOG_FILE="/var/log/update.log"
-REPO_DIR="https://github.com/simba2910/assignment1.git"
+REPO_DIR="/var/www/html"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
 echo "[$TIMESTAMP] Updating system and API..." >> $UPDATE_LOG_FILE
