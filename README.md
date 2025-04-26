@@ -26,6 +26,10 @@ http://13.51.241.80/students
 http://13.51.241.80/subjects
 
 
+links to docker deployed server
+http://51.20.34.254/students
+http://51.20.34.254/subjects
+
 # Back up Schemes
 
 1. Full Backup
@@ -121,3 +125,23 @@ Dependencies
 - tar : for creating backups
 - nginx : web server
 - systemctl : for managing services
+
+
+# Docker 
+Instructions for building docker images
+Using Bash
+- docker-compose build
+
+- then run the containers: docker-compose up -d
+
+- docker ps :to verify containers are running
+
+Docker-compose
+- use .yml to give services for the containers
+
+# Troubleshooting in Docker
+Common Issues
+- database not initializing: try docker-compose down -v then docker-compose up again
+
+- Check logs with: docker-compose logs
+
