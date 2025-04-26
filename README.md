@@ -145,3 +145,6 @@ Common Issues
 
 - Check logs with: docker-compose logs
 
+Link to Docker Registry
+
+https://hub.docker.com/repository/docker/simba2910/cs421-assignment3
