@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies
-RUN pip install flask gunicorn sqlalchemy
+RUN pip install flask gunicorn sqlalchemy flask_sqlalchemy
 
 # Expose port
 EXPOSE 5000
