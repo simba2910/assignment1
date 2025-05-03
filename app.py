@@ -6,7 +6,12 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-os.makedirs(os.path.join(app.instance_path), exist_ok=True)
+# Database configuration using environment variables
+db_user = os.getenv('DATABASE_USER', 'root')
+db_password = os.getenv('DATABASE_PASSWORD', 'Elpistolero2910#')
+db_host = os.getenv('DATABASE_HOST', 'localhost')
+db_name = os.getenv('DATABASE_NAME', 'studentdb')
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Elpistolero2910#@localhost:3306/studentdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)

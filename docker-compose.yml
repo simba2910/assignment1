@@ -10,4 +10,22 @@ services:
       - ./database:/app
     environment:
       - FLASK_ENV=production
+      - DATABASE_HOST=mysql
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=Elpistolero2910#
+      - DATABASE_NAME=studentdb
+    depends_on:
+      - mysql
+    restart: always
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Elpistolero2910#
+      MYSQL_DATABASE: studentdb
+    volumes:
+      - ./studentdb.sql:/docker-entrypoint-initdb.d/studentdb.sql
     restart: always

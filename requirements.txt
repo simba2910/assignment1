@@ -2,3 +2,4 @@ flask
 flask_sqlalchemy
 gurnicorn
 flask-cors
+PyMySQL
