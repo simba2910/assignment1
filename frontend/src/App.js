@@ -9,31 +9,45 @@ function App() {
 
   useEffect(() => {
     // Get the node ID from response headers
-    axios.get('/api/node')
+    axios.get('http://localhost:5000/api/node')
       .then(response => {
         setNodeId(response.headers['x-node-id'] || 'unknown');
       });
   }, []);
 
   const fetchStudents = () => {
-    axios.get('/api/students')
+    console.log('Fetching students from: http://localhost:5000/students');
+    axios.get('http://localhost:5000/students')
       .then(response => setStudents(response.data))
-      .catch(error => console.error('Error:', error));
+      .catch(error => console.error('Error fetching students:', error));
   };
+
+  // const fetchSubjects = () => {
+  // console.log('Fetching subjects from: http://localhost:5000/subjects');
+  // axios.get('http://localhost:5000/subjects')
+  //   .then(response => setSubjects(response.data))
+  //   .catch(error => console.error('Error fetching subjects:', error));
+  // };
 
   const fetchSubjects = () => {
-    axios.get('/api/subjects')
-      .then(response => setSubjects(response.data))
-      .catch(error => console.error('Error:', error));
-  };
+    console.log('Fetching subjects from: http://localhost:5000/subjects');
+    axios.get('http://localhost:5000/subjects')
+      .then(response => {
+        // Log the response to verify the structure
+        console.log('Subjects response:', response.data);
 
+        // Update the subjects state with the response data
+        setSubjects(response.data);
+      })
+      .catch(error => console.error('Error fetching subjects:', error));
+  };
   return (
     <div className="App">
       <header>
         <h1>University Portal</h1>
         <p>Served by: {nodeId}</p>
       </header>
-      
+
       <div className="buttons">
         <button onClick={fetchStudents}>Students</button>
         <button onClick={fetchSubjects}>Courses</button>
@@ -51,14 +65,21 @@ function App() {
           </>
         )}
 
-        {subjects.length > 0 && (
+
+
+        {subjects && Object.keys(subjects).length > 0 && (
           <>
             <h2>Software Engineering Courses</h2>
-            <ul>
-              {subjects.map(subject => (
-                <li key={subject.id}>{subject.name} - Year {subject.year}</li>
-              ))}
-            </ul>
+            {Object.keys(subjects).map(year => (
+              <div key={year}>
+                <h3>{year}</h3>
+                <ul>
+                  {subjects[year].map((subject, index) => (
+                    <li key={index}>{subject}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </>
         )}
       </div>

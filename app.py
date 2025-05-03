@@ -1,11 +1,13 @@
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 os.makedirs(os.path.join(app.instance_path), exist_ok=True)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Elpistolero2910#@localhost:3306/studentdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
