@@ -85,6 +85,13 @@ with app.app_context():
     db.session.commit()
 
 # API Endpoints
+@app.route('/api/node', methods=['GET'])
+def get_node_id():
+    response = jsonify({"message": "Node ID endpoint"})
+    response.headers['x-node-id'] = 'node-12345'
+    return response 
+
+
 @app.route('/students', methods=['GET'])
 def get_students():
     students = Student.query.limit(10).all()

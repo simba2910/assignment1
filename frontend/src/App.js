@@ -11,7 +11,7 @@ function App() {
     // Get the node ID from response headers
     axios.get('http://localhost:5000/api/node')
       .then(response => {
-        setNodeId(response.headers['x-node-id'] || 'unknown');
+        setNodeId(response.headers['x-node-id'] || 'frontend1');
       });
   }, []);
 
